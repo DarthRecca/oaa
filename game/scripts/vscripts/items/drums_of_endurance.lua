@@ -12,8 +12,8 @@ end
 
 function item_drums_of_endurance_oaa:GetIntrinsicModifierNames()
 	return {
-  		"modifier_item_ancient_janggo_of_endurance_oaa",
-  		"modifier_item_drums_of_endurance_oaa"
+      "modifier_item_ancient_janggo_of_endurance_oaa",
+      "modifier_item_drums_of_endurance_oaa"
     }
 end
 -----------------------------------------------------------------------------------------------------------------------------
@@ -33,19 +33,6 @@ function item_drums_of_endurance_oaa:OnSpellStart()
 	local casterTeam = caster:GetTeamNumber()
 	local drums = self.GetAbility()
   local needsSetCharges = true
-
-  --if ability:GetSpecialValueFor("ItemRequiresCharges") == 1 then
-      --needsSetCharges = true
-    --else
-      --needsSetCharges = false
-  --end
-
-  --local oldcharges = ability:GetCurrentCharges()
-  --local newcharges = oldcharges
-  --if needsSetCharges then
-    --newcharges = oldcharges - 1
-  --end
-  --ability:SetCurrentCharges(newcharges)
 
 	local units = FindUnitsInRadius(
 					casterTeam,
@@ -82,16 +69,16 @@ end
 
 function modifier_item_drums_of_endurance_oaa_active:DeclareFunctions()
 	local decFuncs = {
-		MODIFIER_PROPERTY_MOVEMENT_SPEED_BONUS,
-		MODIFIER_PROPERTY_ATTACK_SPEED_BONUS}
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
 	return decFuncs
 end
 
-function modifier_item_drums_of_endurance_oaa_active:GetModifierMovementSpeedBonus()
+function modifier_item_drums_of_endurance_oaa_active:GetModifierMoveSpeedBonus_Constant()
 	return self.active_movement_speed
 end
 
-function modifier_item_drums_of_endurance_oaa_active:GetModifierAttackSpeedBonus()
+function modifier_item_drums_of_endurance_oaa_active:GetModifierAttackSpeedBonus_Constant()
 	return self.active_attack_speed
 end
 
@@ -167,12 +154,12 @@ end
 
 function modifier_item_drums_of_endurance_oaa_swiftness_aura_effect:DeclareFunctions()
 	local decFuncs = {
-		MODIFIER_PROPERTY_MOVEMENT_SPEED_BONUS,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
     }
 	return decFuncs
 end
 
-function modifier_item_drums_of_endurance_oaa_swiftness_aura_effect:GetModifierMovementSpeedBonus()
+function modifier_item_drums_of_endurance_oaa_swiftness_aura_effect:GetModifierMoveSpeedBonus_Constant()
 	return self.aura_movement_speed
 end
 
@@ -183,20 +170,9 @@ modifier_item_drums_of_endurance_oaa = class(ModifierBaseClass)
 
 function modifier_item_drums_of_endurance_oaa:Setup(created)
   local ability = self:GetAbility()
- 	local caster = self:GetCaster()
+  local caster = self:GetCaster()
  	-- Needs charges only in tier 1
- 	local needsSetCharges = false
-
-  --if ability:GetSpecialValueFor("ItemRequiresCharges") == 1 then
-    --self.charges = ability:GetCurrentCharges()
-	  --needsSetCharges = true
-  --else
-	  --needsSetCharges = false
-	--end
-
-	--if needsSetCharges then
-  	--ability:SetCurrentCharges(self.charges)
-  --end
+  local needsSetCharges = false
 end
 
 function modifier_item_drums_of_endurance_oaa:OnCreated()
@@ -243,7 +219,7 @@ function modifier_item_drums_of_endurance_oaa:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_PROPERTY_MANA_REGENERATION}
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 	return decFuncs
 end
 
@@ -263,7 +239,7 @@ function modifier_item_drums_of_endurance_oaa:GetModifierPreAttack_BonusDamage()
 	return self.bonus_damage
 end
 
-function modifier_item_drums_of_endurance_oaa:GetModifierManaRegeneration()
+function modifier_item_drums_of_endurance_oaa:GetModifierConstantManaRegen()
 	return self.bonus_mana_regeneration
 end
 
