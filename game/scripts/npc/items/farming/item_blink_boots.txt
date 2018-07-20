@@ -1,0 +1,74 @@
+"DOTAItems"
+{
+  //=================================================================================================================
+  // Recipe: Blink Boots
+  //=================================================================================================================
+  "item_recipe_blink_boots"
+  {
+    "ID"                                                  "207"    // unique ID
+    "ItemCost"                                            "100"
+    "ItemShopTags"                                        ""
+    "ItemRecipe"                                          "1"
+    "ItemResult"                                          "item_blink_boots"
+    "AbilityTextureName"                                  "custom/recipe/recipe_1"
+    "ItemRequirements"
+    {
+      "01"                                                "item_boots;item_blink;item_farming_core"
+    }
+  }
+
+  //=================================================================================================================
+  // Blink Boots
+  //=================================================================================================================
+  "item_blink_boots"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "1"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+  	"BaseClass"                                           "item_lua"
+    "ScriptFile"                                          "items/farming/blink_boots.lua"
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "AbilityTextureName"                                  "custom/blink"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "0"
+    "AbilityCastPoint"                                    "0.0"
+    "AbilityCooldown"                                     "15.0 14.0 13.0 12.0"
+    "AbilitySharedCooldown"                               "blink"
+    "AbilityManaCost"                                     "0"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                                            "2250"
+    "ItemShopTags"                                        "teleport"
+    "ItemQuality"                                         "component"
+    "ItemAliases"                                         "blink boots"
+    "SideShop"                                            "0"
+    "ItemDeclarations"                                    "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"                                     "5"
+    "ItemBaseLevel"                                       "1"
+    "UpgradesItems"                                       "item_blink_boots"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "blink_range"                                     "1200 1400 1600 1800 2000"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "blink_damage_cooldown"                           "3.0"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_movement_speed"                            "60 70 80 90"
+      }
+    }
+  }
+}
