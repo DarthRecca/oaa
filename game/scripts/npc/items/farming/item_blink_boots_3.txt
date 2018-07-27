@@ -3,24 +3,26 @@
   //=================================================================================================================
   // Recipe: Blink Boots
   //=================================================================================================================
-  "item_recipe_blink_boots_1"
+  "item_recipe_blink_boots_3"
   {
     "ID"                                                  "207"    // unique ID
-    "ItemCost"                                            "500"
+    "ItemCost"                                            "3500"
     "ItemShopTags"                                        ""
     "ItemRecipe"                                          "1"
-    "ItemResult"                                          "item_blink_boots"
+    "ItemResult"                                          "item_blink_boots_3"
     "AbilityTextureName"                                  "custom/recipe/recipe_1"
     "ItemRequirements"
     {
-      "01"                                                "item_boots"
+      "01"                                                "item_blink_boots_2;item_upgrade_core_2"
+      "02"                                                "item_blink_boots_2;item_upgrade_core_3"
+      "03"                                                "item_blink_boots_2;item_upgrade_core_4"
     }
   }
 
   //=================================================================================================================
   // Blink Boots
   //=================================================================================================================
-  "item_blink_boots_1"
+  "item_blink_boots_3"
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
@@ -34,21 +36,21 @@
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"                                    "0"
     "AbilityCastPoint"                                    "0.0"
-    "AbilityCooldown"                                     "15.0 14.0 13.0 12.0 11.0"
+    "AbilityCooldown"                                     "15.0 14.0 13.0 12.0"
     "AbilitySharedCooldown"                               "blink"
     "AbilityManaCost"                                     "0"
 
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"                                            "1000"
+    "ItemCost"                                            "10000"
     "ItemShopTags"                                        "teleport"
     "ItemQuality"                                         "component"
     "ItemAliases"                                         "blinkboots"
     "SideShop"                                            "0"
     "ItemDeclarations"                                    "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
     "MaxUpgradeLevel"                                     "5"
-    "ItemBaseLevel"                                       "1"
-    "UpgradesItems"                                       "item_blink_boots_2;item_blink_boots_3;item_blink_boots_4;item_blink_boots_5"
+    "ItemBaseLevel"                                       "3"
+    "UpgradesItems"                                       "item_blink_boots_4;item_blink_boots_5"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -57,7 +59,7 @@
       "01"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range"                                     "400 500 600 700 800"
+        "blink_range"                                     "400 500 600 700"
       }
       "02"
       {
@@ -67,7 +69,7 @@
       "03"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "bonus_movement_speed"                            "60 70 80 90 100"
+        "bonus_movement_speed"                            "60 70 80 90"
       }
     }
   }

@@ -1,0 +1,37 @@
+//===============================================================================
+// Blink Boots
+//===============================================================================
+"DOTA_Tooltip_Ability_item_blink_boots"                                "Blink Boots"
+"DOTA_Tooltip_Ability_item_recipe_blink_boots"                         "Blink Boots Recipe"
+"DOTA_Tooltip_Ability_item_blink_boots_Description"                    "<h1>Active: Blink</h1> Blinks to a target point up to +%max_blink_range% units away."
+"DOTA_Tooltip_Ability_item_blink_boots_Lore"                           "Boots that were infused with the powers of Blink Dagger by a novice enchanter, but lost their potency during infusion. They still blink and give more movement speed though."
+"DOTA_Tooltip_Ability_item_blink_boots_Note0"                          "Blink Boots cannot be used for 3 seconds after taking damage from an enemy hero."
+"DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed"           "+$bonus_movement_speed"
+
+"DOTA_Tooltip_Ability_item_blink_boots_2"                              "#{DOTA_Tooltip_Ability_item_blink_boots}"
+"DOTA_Tooltip_Ability_item_recipe_blink_boots_2"                       "#{DOTA_Tooltip_Ability_item_recipe_blink_boots}"
+"DOTA_Tooltip_Ability_item_blink_boots_Description_2"                  "#{DOTA_Tooltip_Ability_item_blink_boots_Description}"
+"DOTA_Tooltip_Ability_item_blink_boots_Lore_2"                         "#{DOTA_Tooltip_Ability_item_blink_boots_Lore}"
+"DOTA_Tooltip_Ability_item_blink_boots_Note0_2"                        "#{DOTA_Tooltip_Ability_item_blink_boots_Note0}"
+"DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed_2"         "#{DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed}"
+
+"DOTA_Tooltip_Ability_item_blink_boots_3"                              "#{DOTA_Tooltip_Ability_item_blink_boots}"
+"DOTA_Tooltip_Ability_item_recipe_blink_boots_3"                       "#{DOTA_Tooltip_Ability_item_recipe_blink_boots}"
+"DOTA_Tooltip_Ability_item_blink_boots_Description_3"                  "#{DOTA_Tooltip_Ability_item_blink_boots_Description}"
+"DOTA_Tooltip_Ability_item_blink_boots_Lore_3"                         "#{DOTA_Tooltip_Ability_item_blink_boots_Lore}"
+"DOTA_Tooltip_Ability_item_blink_boots_Note0_3"                        "#{DOTA_Tooltip_Ability_item_blink_boots_Note0}"
+"DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed_3"         "#{DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed}"
+
+"DOTA_Tooltip_Ability_item_blink_boots_4"                              "#{DOTA_Tooltip_Ability_item_blink_boots}"
+"DOTA_Tooltip_Ability_item_recipe_blink_boots_4"                       "#{DOTA_Tooltip_Ability_item_recipe_blink_boots}"
+"DOTA_Tooltip_Ability_item_blink_boots_Description_4"                  "#{DOTA_Tooltip_Ability_item_blink_boots_Description}"
+"DOTA_Tooltip_Ability_item_blink_boots_Lore_4"                         "#{DOTA_Tooltip_Ability_item_blink_boots_Lore}"
+"DOTA_Tooltip_Ability_item_blink_boots_Note0_4"                        "#{DOTA_Tooltip_Ability_item_blink_boots_Note0}"
+"DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed_4"         "#{DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed}"
+
+"DOTA_Tooltip_Ability_item_blink_boots_5"                              "#{DOTA_Tooltip_Ability_item_blink_boots}"
+"DOTA_Tooltip_Ability_item_recipe_blink_boots_5"                       "#{DOTA_Tooltip_Ability_item_recipe_blink_boots}"
+"DOTA_Tooltip_Ability_item_blink_boots_Description_5"                  "#{DOTA_Tooltip_Ability_item_blink_boots_Description}"
+"DOTA_Tooltip_Ability_item_blink_boots_Lore_5"                         "#{DOTA_Tooltip_Ability_item_blink_boots_Lore}"
+"DOTA_Tooltip_Ability_item_blink_boots_Note0_5"                        "#{DOTA_Tooltip_Ability_item_blink_boots_Note0}"
+"DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed_5"         "#{DOTA_Tooltip_Ability_item_blink_boots_bonus_movement_speed}"
