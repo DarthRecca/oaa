@@ -23,9 +23,20 @@ function PointsManager:Init ()
 
   GameEvents:OnHeroKilled(function (keys)
     -- increment points
+    if not keys.killer or not keys.killed then
+      return
+    end
     if keys.killer:GetTeam() ~= keys.killed:GetTeam() and not keys.killed:IsReincarnating() and keys.killed:GetTeam() ~= DOTA_TEAM_NEUTRALS then
       self:AddPoints(keys.killer:GetTeam())
     end
+  end)
+
+  GameEvents:OnPlayerAbandon(function (keys)
+    local limit = self:GetLimit()
+    local maxPoints = math.max(self:GetPoints(DOTA_TEAM_GOODGUYS), self:GetPoints(DOTA_TEAM_BADGUYS))
+    limit = math.max(maxPoints + 10, limit - 10)
+
+    self:SetLimit(limit)
   end)
 
   -- Register chat commands
@@ -33,6 +44,20 @@ function PointsManager:Init ()
   ChatCommand:LinkDevCommand("-add_enemy_points", Dynamic_Wrap(PointsManager, "AddEnemyPointsCommand"), self)
   ChatCommand:LinkDevCommand("-kill_limit", Dynamic_Wrap(PointsManager, "SetLimitCommand"), self)
   ChatCommand:LinkDevCommand("-kill_limit", Dynamic_Wrap(PointsManager, "SetLimitCommand"), self)
+end
+
+function PointsManager:GetState ()
+  return {
+    limit = self:GetLimit(),
+    goodScore = self:GetPoints(DOTA_TEAM_GOODGUYS),
+    badScore = self:GetPoints(DOTA_TEAM_BADGUYS)
+  }
+end
+
+function PointsManager:LoadState (state)
+  self:SetLimit(state.limit)
+  self:SetPoints(DOTA_TEAM_GOODGUYS, state.goodScore)
+  self:SetPoints(DOTA_TEAM_BADGUYS, state.badScore)
 end
 
 function PointsManager:CheckWinCondition(teamID, points)
