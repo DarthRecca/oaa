@@ -18,15 +18,21 @@ function item_blink_boots_oaa:OnSpellStart()
 	local distance = (target_point - origin_point):Length2D()
 	local max_blink_range = self:GetSpecialValueFor("max_blink_range")
 
+  ParticleManager:CreateParticle("particles/items_fx/blink_dagger_start.vpcf", PATTACH_ABSORIGIN, caster)
+
 	--Dodging mechanics
 	ProjectileManager:ProjectileDodge(caster)
-
+  if distance >= max_blink_range then  --Check caster is over reaching.
+    target_point = origin_point + (target_point - origin_point):Normalized() * max_blink_range
+	elseif distance < max_blink_range then
+    target_point = target_point
+  end
+  caster:SetAbsOrigin(target_point) --We move the caster instantly to the location
+  FindClearSpaceForUnit(caster, target_point, false) --This makes sure our caster does not get stuck
 	--Particle Management
-	local blink_pfx = ParticleManager:CreateParticle(caster.blink_effect, origin_point, caster)
-	ParticleManager:ReleaseParticleIndex(blink_pfx)
-
   --Emit Sound on activation
 	caster:EmitSound("DOTA_Item.BlinkDagger.Activate")
+  ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, caster)
 end
 
 -----------------------------------------------------------------------------------------------------------

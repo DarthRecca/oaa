@@ -103,6 +103,11 @@
 #base "items/custom/item_vampire.txt"
 #base "items/custom/item_vampire_2.txt"
 
+#base "items/farming/item_blink_boots.txt"
+#base "items/farming/item_blink_boots_2.txt"
+#base "items/farming/item_blink_boots_3.txt"
+#base "items/farming/item_blink_boots_4.txt"
+#base "items/farming/item_blink_boots_5.txt"
 #base "items/farming/item_greater_arcane_boots.txt"
 #base "items/farming/item_greater_arcane_boots_2.txt"
 #base "items/farming/item_greater_arcane_boots_3.txt"
