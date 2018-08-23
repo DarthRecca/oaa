@@ -5,7 +5,7 @@
   //=================================================================================================================
   "item_recipe_blink_boots_2"
   {
-    "ID"                                                  "4022"    // unique ID
+    "ID"                                                  "8512"    // unique ID
     "ItemCost"                                            "1500"
     "BaseClass"                                           "item_datadriven"
     "ItemShopTags"                                        ""
@@ -25,7 +25,7 @@
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "ID"                                                  "4027"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "ID"                                                  "8517"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
   	"BaseClass"                                           "item_lua"
     "ScriptFile"                                          "items/farming/blink_boots.lua"
     "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
